@@ -94,10 +94,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'home_utkn',
-        'USER': 'furman_aa',
-        'PASSWORD': 'QBW5nr77FNix13lVD5TENnu9AqToEnM0',
-        'HOST': 'dpg-d16qhtp5pdvs73flaf18-a.frankfurt-postgres.render.com',
+        'USER': 'furman_aa',  
+        'PASSWORD': '08M5nr77FHkx131Vb5TElhu9AqToEnN0',  # 
+        'HOST': 'dpg-d16ohtp5pdvs73f1af10-a.frankfurt-postgres.render.com',  # Полный хост
         'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require'  # Правильное написание
+        }
     }
 }
 
