@@ -14,6 +14,8 @@ from pathlib import Path
 
 from django.http import HttpResponseNotFound
 
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -90,10 +92,10 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'home',
-        'USER': 'home',
-        'PASSWORD': 'home',
-        'HOST': 'localhost',
+        'NAME': 'home_utkn',
+        'USER': 'furman_aa',
+        'PASSWORD': 'QBW5nr77FNix13lVD5TENnu9AqToEnM0',
+        'HOST': 'postgresql://furman_aa:QBW5nr77FNix13lVD5TENnu9AqToEnM0@dpg-d16qhtp5pdvs73flaf10-a/home_utkn',
         'PORT': '5432',
     }
 }
@@ -145,6 +147,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
     ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = 'media/'
 
