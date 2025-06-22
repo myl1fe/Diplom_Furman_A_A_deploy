@@ -35,7 +35,7 @@ if not os.path.exists(INIT_FLAG):
             User.objects.create_superuser(
                 username='toor',
                 email='toor@toormail.ru',
-                password='hbXE2U3JebaKfeA'
+                password='tdc6x2jhrg3945v'
             )
             print("Суперпользователь 'toor' создан")
 
