@@ -96,7 +96,7 @@ DATABASES = {
         'NAME': 'home_utkn',
         'USER': 'furman_aa',
         'PASSWORD': 'QBW5nr77FNix13lVD5TENnu9AqToEnM0',
-        'HOST': 'postgresql://furman_aa:QBW5nr77FNix13lVD5TENnu9AqToEnM0@dpg-d16qhtp5pdvs73flaf10-a/home_utkn',
+        'HOST': 'postgresql://furman_aa:QBW5nr77FNix13lVD5TENnu9AqToEnM0@dpg-d16qhtp5pdvs73flaf10-a.frankfurt-postgres.render.com/home_utkn',
         'PORT': '5432',
     }
 }
