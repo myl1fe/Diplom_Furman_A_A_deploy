@@ -12,17 +12,15 @@ import os
 from django.core.wsgi import get_wsgi_application
 from django.contrib.auth import get_user_model
 from django.db.utils import OperationalError
+from django.core.management import call_command
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'app.settings')
 
-# Проверка выполнения миграций
-# MIGRATE_FLAG = os.path.join(os.path.dirname(__file__), '.migrated')
-# if not os.path.exists(MIGRATE_FLAG):
-#     from django.core.management import execute_from_command_line
-#     execute_from_command_line(['manage.py', 'migrate'])
-#     open(MIGRATE_FLAG, 'w').close()
 
-# application = get_wsgi_application()
+FIXTURES = [
+    'goods/fixtures/categories.json',
+    'goods/fixtures/products.json',
+]
 
 INIT_FLAG = os.path.join(os.path.dirname(__file__), '.initialized')
 if not os.path.exists(INIT_FLAG):
@@ -40,7 +38,17 @@ if not os.path.exists(INIT_FLAG):
                 password='hbXE2U3JebaKfeA'
             )
             print("Суперпользователь 'toor' создан")
-        
+
+        for fixture in FIXTURES:
+            try:
+                if os.path.exists(fixture):
+                    call_command('loaddata', fixture)
+                    print(f"✅ Загружена фикстура: {fixture}")
+                else:
+                    print(f"⚠️ Файл фикстуры не найден: {fixture}")
+            except Exception as e:
+                print(f"⚠️ Ошибка загрузки {fixture}: {str(e)}")
+
         # 3. Создаем маркер завершения
         open(INIT_FLAG, 'w').close()
         print("Инициализация выполнена")
