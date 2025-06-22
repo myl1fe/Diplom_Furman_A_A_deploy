@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: Diplom_Furman_A_A_deploy
+    runtime: python
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: gunicorn your_project.wsgi:application
+    envVars:
+      - key: django-insecure-ld)8k$gfoow^#9-6mm@palg6l9d)&l!5ng#m2@=msxhq353g#2
+        generateValue: true
+      - key: DEBUG
+        value: "True"
