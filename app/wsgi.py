@@ -18,8 +18,8 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'app.settings')
 
 
 FIXTURES = [
-    'goods/fixtures/categories.json',
-    'goods/fixtures/products.json',
+    'fixtures/goods/categories.json',
+    'fixtures/goods/products.json',
 ]
 
 INIT_FLAG = os.path.join(os.path.dirname(__file__), '.initialized')
