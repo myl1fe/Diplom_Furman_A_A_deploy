@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: Diplom_Furman_A_A_deploy
+    name: app
     runtime: python
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
     startCommand: gunicorn your_project.wsgi:application
